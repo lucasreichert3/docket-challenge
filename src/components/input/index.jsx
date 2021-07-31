@@ -8,7 +8,7 @@ function Input({ label, register, required, name, type = 'text', errors }) {
         {label}: <span>{required ? '*' : ''}</span>
       </label>
       <input
-        placeholder="Nome do documento..."
+        placeholder="Digite aqui..."
         type={type}
         id={name}
         {...register(name, { required })}

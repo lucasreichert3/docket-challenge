@@ -5,6 +5,7 @@ import Input from '../input/index'
 import InputSelect from '../input-select/index'
 import Button from '../button/index'
 import './style.scss'
+import RegistryForm from '../registry-form'
 
 function RequestFormCard() {
   const {
@@ -54,7 +55,11 @@ function RequestFormCard() {
             errors={errors}
           />
         </div>
-        <Button buttonText="Criar documento" />
+        <div className="registry-form">
+          <h2 className="registry-title">Dados do cartório</h2>
+          <RegistryForm register={register} errors={errors} />
+          <Button buttonText="Criar documento" />
+        </div>
       </form>
     </Card>
   )

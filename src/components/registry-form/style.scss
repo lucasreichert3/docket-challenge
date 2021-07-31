@@ -1,0 +1,15 @@
+.input-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .first-input {
+        width: 60%;
+        padding-right: .5rem;
+    }
+
+    .second-input {
+        padding-left: .5rem;
+        width: 40%;
+    }
+}
