@@ -1,0 +1,31 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  &.has-error {
+    input {
+      border: 1px solid #E65562;
+    }
+  }
+
+  label {
+    padding-bottom: 0.5rem;
+
+    span {
+      color: tomato;
+    }
+  }
+
+  input {
+    border: 1px solid #ababab;
+    padding: 0.8rem;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  .error-message {
+      color: #E65562;
+      font-size: 14px;
+      padding: .5rem 0;
+  }
+}
