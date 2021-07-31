@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import Card from '../card/index'
 import Input from '../input/index'
 import InputSelect from '../input-select/index'
+import Button from '../button/index'
 import './style.scss'
 
 function RequestFormCard() {
@@ -53,7 +54,7 @@ function RequestFormCard() {
             errors={errors}
           />
         </div>
-        <button type="submit">Criar documento</button>
+        <Button buttonText="Criar documento" />
       </form>
     </Card>
   )

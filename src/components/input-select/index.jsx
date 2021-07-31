@@ -14,6 +14,10 @@ function InputSelect({ errors, name, label, required, register, options = [] }) 
           </option>
         ))}
       </select>
+
+      <span className="error-message">
+        {errors[name]?.type === 'required' && 'Campo obrigatório!'}
+      </span>
     </div>
   )
 }

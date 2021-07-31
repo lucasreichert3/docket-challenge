@@ -13,11 +13,9 @@ function Input({ label, register, required, name, type = 'text', errors }) {
         id={name}
         {...register(name, { required })}
       />
-      {errors[name] && (
-        <span className="error-message">
-          {errors[name]?.type === 'required' && 'Campo obrigatório!'}
-        </span>
-      )}
+      <span className="error-message">
+        {errors[name]?.type === 'required' && 'Campo obrigatório!'}
+      </span>
     </div>
   )
 }
