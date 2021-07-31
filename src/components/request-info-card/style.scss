@@ -1,0 +1,44 @@
+.status {
+  background-color: #EBF0F5;
+  padding: .5rem;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    padding-left: .5rem;
+  }
+
+  .status-badge{
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+
+    &.in-progress {
+      background-color: #FFAF3E;
+    }
+
+    &.done{
+      background-color: #00B98E;
+    }
+  }
+}
+
+.info {
+  strong {
+    font-weight: 700;
+  }
+
+  .user-info {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+
+    p {
+      &:nth-child(2) {
+        padding-left: 4rem;
+      }
+    }
+  }
+}
