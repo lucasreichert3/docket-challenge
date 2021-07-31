@@ -28,7 +28,6 @@ function RegistryForm({ register, errors }) {
         <div className="second-input">
           <Input
             name="state"
-            type="number"
             label="UF"
             register={register}
             required

@@ -6,16 +6,20 @@ import InputSelect from '../input-select/index'
 import Button from '../button/index'
 import './style.scss'
 import RegistryForm from '../registry-form'
+import { useDocuments } from '../../contexts/documents'
 
 function RequestFormCard() {
+  const { newDocument } = useDocuments();
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors }
   } = useForm()
 
   const onSubmit = data => {
-    console.log(data)
+    newDocument(data);
+    reset();
   }
 
   return (
