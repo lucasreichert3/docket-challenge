@@ -23,10 +23,12 @@ function RequestDocuments() {
             <RequestFormCard />
           </div>
           <div className="list">
-            <h2 className="title">
-              {documents.length} documento
-              {documents.length === 1 || documents.length === 0 ? '' : 's'} solicitado
-            </h2>
+            {documents.length > 0 && (
+              <h2 className="title">
+                {documents.length} documento
+                {documents.length === 1 ? '' : 's'} solicitado
+              </h2>
+            )}
             <DocumentsListCard />
           </div>
         </div>

@@ -1,0 +1,15 @@
+.empty-state {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .message {
+    padding-top: 1rem;
+    color: #828180;
+  }
+}
