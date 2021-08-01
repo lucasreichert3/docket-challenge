@@ -9,7 +9,7 @@ import RegistryForm from '../registry-form'
 import { useDocuments } from '../../contexts/documents'
 
 function RequestFormCard() {
-  const { newDocument } = useDocuments();
+  const { newDocument } = useDocuments()
   const {
     reset,
     register,
@@ -18,8 +18,8 @@ function RequestFormCard() {
   } = useForm()
 
   const onSubmit = data => {
-    newDocument(data);
-    reset();
+    newDocument(data)
+    reset()
   }
 
   return (
@@ -48,7 +48,29 @@ function RequestFormCard() {
           />
         </div>
         <div className="input-space">
-          <Input name="cpf" label="CPF" register={register} required errors={errors} />
+          <Input
+            name="cpf"
+            label="CPF"
+            register={register}
+            required
+            errors={errors}
+            mask={[
+              /[1-9]/,
+              /\d/,
+              /\d/,
+              '.',
+              /\d/,
+              /\d/,
+              /\d/,
+              '.',
+              /\d/,
+              /\d/,
+              /\d/,
+              '-',
+              /\d/,
+              /\d/
+            ]}
+          />
         </div>
         <div className="input-space">
           <Input
