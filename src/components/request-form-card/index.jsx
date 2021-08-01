@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Card from '../card/index'
 import Input from '../input/index'
@@ -7,6 +7,9 @@ import Button from '../button/index'
 import './style.scss'
 import RegistryForm from '../registry-form'
 import { useDocuments } from '../../contexts/documents'
+import { CNPJ_MASK, CPF_MASK, personType } from '../../constans/MaskConstants'
+
+const personDocDefaulValue = { label: 'Cpf', mask: CPF_MASK }
 
 function RequestFormCard() {
   const { newDocument } = useDocuments()
@@ -14,8 +17,19 @@ function RequestFormCard() {
     reset,
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    watch
   } = useForm()
+  const personTypeWatch = watch('person')
+  const [personDocLabel, setPersonDocLabel] = useState(personDocDefaulValue)
+
+  useEffect(() => {
+    const personDocLabelValue =
+      personTypeWatch === personType.legal
+        ? { label: 'Cnpj', mask: CNPJ_MASK }
+        : personDocDefaulValue
+    setPersonDocLabel(personDocLabelValue)
+  }, [personTypeWatch])
 
   const onSubmit = data => {
     newDocument(data)
@@ -42,34 +56,19 @@ function RequestFormCard() {
             errors={errors}
             required
             options={[
-              { value: 'physical', text: 'Pessoa física' },
-              { value: 'legal', text: 'Pessoa jurídica' }
+              { value: personType.physical, text: 'Pessoa física' },
+              { value: personType.legal, text: 'Pessoa jurídica' }
             ]}
           />
         </div>
         <div className="input-space">
           <Input
-            name="cpf"
-            label="CPF"
+            name="personDoc"
+            label={personDocLabel.label}
             register={register}
             required
             errors={errors}
-            mask={[
-              /[1-9]/,
-              /\d/,
-              /\d/,
-              '.',
-              /\d/,
-              /\d/,
-              /\d/,
-              '.',
-              /\d/,
-              /\d/,
-              /\d/,
-              '-',
-              /\d/,
-              /\d/
-            ]}
+            mask={personDocLabel.mask}
           />
         </div>
         <div className="input-space">
