@@ -1,5 +1,4 @@
 import React from 'react'
-import icon from '../../assets/document-icon.svg'
 import './style.scss'
 
 function EmptyState({ message, image }) {
