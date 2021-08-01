@@ -13,6 +13,7 @@ function Input({ label, register, required, name, type = 'text', errors, mask })
           placeholder="Digite aqui..."
           type={type}
           id={name}
+          guide={false}
           {...register(name, { required })}
           mask={mask}
         />

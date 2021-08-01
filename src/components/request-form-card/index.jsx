@@ -18,7 +18,8 @@ function RequestFormCard() {
     register,
     handleSubmit,
     formState: { errors },
-    watch
+    watch,
+    setValue
   } = useForm()
   const personTypeWatch = watch('person')
   const [personDocLabel, setPersonDocLabel] = useState(personDocDefaulValue)
@@ -82,7 +83,12 @@ function RequestFormCard() {
         </div>
         <div className="registry-form">
           <h2 className="registry-title">Dados do cartório</h2>
-          <RegistryForm register={register} errors={errors} />
+          <RegistryForm
+            register={register}
+            errors={errors}
+            watch={watch}
+            setValue={setValue}
+          />
           <Button buttonText="Criar documento" />
         </div>
       </form>
