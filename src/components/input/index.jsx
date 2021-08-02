@@ -2,7 +2,7 @@ import React from 'react'
 import MaskedInput from 'react-text-mask'
 import './style.scss'
 
-function Input({ label, register, required, name, type = 'text', errors, mask }) {
+function Input({ label, register, required, name, type = 'text', errors, mask, minLength }) {
   return (
     <div className={`input-container ${errors[name] ? 'has-error' : ''}`}>
       <label htmlFor={name}>
@@ -14,7 +14,7 @@ function Input({ label, register, required, name, type = 'text', errors, mask })
           type={type}
           id={name}
           guide={false}
-          {...register(name, { required })}
+          {...register(name, { required, minLength })}
           mask={mask}
         />
       )}
@@ -28,6 +28,7 @@ function Input({ label, register, required, name, type = 'text', errors, mask })
       )}
       <span className="error-message">
         {errors[name]?.type === 'required' && 'Campo obrigatório!'}
+        {errors[name]?.type === 'minLength' && 'Formato inválido!'}
       </span>
     </div>
   )

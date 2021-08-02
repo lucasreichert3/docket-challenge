@@ -36,6 +36,7 @@ function RegistryForm({ register, errors, watch, setValue, setFocus }) {
         required
         errors={errors}
         mask={CEP_MASK}
+        minLength={9}
       />
       <div className="input-line">
         <div className="first-input">

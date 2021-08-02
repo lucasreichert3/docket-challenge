@@ -21,7 +21,7 @@ function RequestFormCard() {
     formState: { errors },
     watch,
     setValue,
-    setFocus 
+    setFocus
   } = useForm()
   const personTypeWatch = watch('person')
   const [personDocLabel, setPersonDocLabel] = useState(personDocDefaulValue)
@@ -76,6 +76,7 @@ function RequestFormCard() {
               required
               errors={errors}
               mask={personDocLabel.mask}
+              minLength={personTypeWatch === personType.physical ? 14 : 18}
             />
           </div>
           <div className="input-space">
