@@ -49,7 +49,7 @@ function DocumentCard({ doc }) {
 
   const getModalContent = () => {
     return (
-      <div className={`delete-modal-content ${loading ? 'loading' : ''}`}>
+      <div className="delete-modal-content">
         <div className="delete-modal-text">
           <span>Tem certeza que deseja excluir este documento?</span>
         </div>
@@ -77,8 +77,7 @@ function DocumentCard({ doc }) {
         modalCloseCallback={() => handleShowModal(false)}
         headerElement={getModalHeader()}
       >
-        <Loading visible={loading} customLoading></Loading>
-        {getModalContent()}
+        <Loading visible={loading}>{getModalContent()}</Loading>
       </Modal>
       <Card
         key={doc.id}
