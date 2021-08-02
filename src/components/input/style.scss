@@ -1,10 +1,12 @@
+@import '../../styles/Variables.scss';
+
 .input-container {
   display: flex;
   flex-direction: column;
 
   &.has-error {
     input {
-      border: 1px solid #E65562;
+      border: 1px solid $red_danger;
     }
   }
 
@@ -12,7 +14,7 @@
     padding-bottom: 0.5rem;
 
     span {
-      color: tomato;
+      color: $red_danger;
     }
   }
 
@@ -24,7 +26,7 @@
   }
 
   .error-message {
-      color: #E65562;
+      color: $red_danger;
       font-size: 14px;
       padding: .5rem 0;
   }

@@ -1,3 +1,5 @@
+@import '../../styles/Variables.scss';
+
 .status {
   background-color: #EBF0F5;
   padding: .5rem;
@@ -16,11 +18,11 @@
     border-radius: 100%;
 
     &.in-progress {
-      background-color: #FFAF3E;
+      background-color: $yellow_in_progress;
     }
 
     &.done{
-      background-color: #00B98E;
+      background-color: $green_success;
     }
   }
 }
