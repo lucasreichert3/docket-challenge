@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CEP_MASK } from '../../constans/MaskConstants'
 import { searchCep } from '../../services/Cep'
 import Input from '../input'
+import Loading from '../loading/index'
 import './style.scss'
 
-function RegistryForm({ register, errors, watch, setValue }) {
+function RegistryForm({ register, errors, watch, setValue, setFocus }) {
   const cepWatch = watch('cep')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (cepWatch && cepWatch.length === 9) {
@@ -15,14 +17,18 @@ function RegistryForm({ register, errors, watch, setValue }) {
         setValue('street', logradouro)
         setValue('city', localidade)
         setValue('state', uf)
+        setFocus('number')
       }
 
-      setTimeout(() => callCepApi(), 500)
+      setTimeout(() => {
+        setLoading(true)
+        callCepApi().then(() => setLoading(false))
+      }, 500)
     }
-  }, [cepWatch, setValue])
+  }, [cepWatch, setValue, setFocus])
 
   return (
-    <>
+    <Loading visible={loading}>
       <Input
         name="cep"
         label="CEP"
@@ -54,7 +60,7 @@ function RegistryForm({ register, errors, watch, setValue }) {
           <Input name="state" label="UF" register={register} required errors={errors} />
         </div>
       </div>
-    </>
+    </Loading>
   )
 }
 

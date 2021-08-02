@@ -7,6 +7,7 @@ import { FaTrash } from 'react-icons/fa'
 import Modal from '../modal'
 import Button from '../button'
 import { useDocuments } from '../../contexts/documents'
+import Loading from '../loading/index'
 
 function DocumentCard({ doc }) {
   const { deleteDocument } = useDocuments()
@@ -48,10 +49,11 @@ function DocumentCard({ doc }) {
 
   const getModalContent = () => {
     return (
-      <div className="delete-modal-content">
+      <div className={`delete-modal-content ${loading ? 'loading' : ''}`}>
         <div className="delete-modal-text">
           <span>Tem certeza que deseja excluir este documento?</span>
         </div>
+
         <div className="modal-buttons-footer">
           <div className="modal-button modal-button-cancel">
             <Button
@@ -75,6 +77,7 @@ function DocumentCard({ doc }) {
         modalCloseCallback={() => handleShowModal(false)}
         headerElement={getModalHeader()}
       >
+        <Loading visible={loading} customLoading></Loading>
         {getModalContent()}
       </Modal>
       <Card
