@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { getAll, postNewDocument } from '../services/Documents'
+import { deleteDoc, getAll, postNewDocument } from '../services/Documents'
 
 const DocumentsContext = createContext({})
 
@@ -23,8 +23,17 @@ export const DocumentsProvider = ({ children }) => {
     setDocuments([...documents, response.data])
   }
 
+  async function deleteDocument(id) {
+    await deleteDoc(id)
+    let newDocumentsList = [...documents]
+    newDocumentsList = newDocumentsList.filter(doc => doc.id !== id)
+    setDocuments([...newDocumentsList])
+  }
+
   return (
-    <DocumentsContext.Provider value={{ documents, newDocument, documentsLoading }}>
+    <DocumentsContext.Provider
+      value={{ documents, newDocument, documentsLoading, deleteDocument }}
+    >
       {children}
     </DocumentsContext.Provider>
   )

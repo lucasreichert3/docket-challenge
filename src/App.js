@@ -1,6 +1,6 @@
 import RequestDocuments from './views/request-documents/index'
-import './reset.scss'
-import './global.scss'
+import './styles/reset.scss'
+import './styles/global.scss'
 import { DocumentsProvider } from './contexts/documents'
 
 function App() {

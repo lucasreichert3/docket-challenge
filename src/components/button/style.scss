@@ -1,14 +1,37 @@
+@import '../../styles/Variables.scss';
+
 .button {
-    border: none;
-    padding: .5rem 1rem;
-    background-color: #3570B2;
-    color: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 200ms;
-    font-size: 15px;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: $blue_primary;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 200ms;
+  font-size: 15px;
+
+  &.danger {
+    background-color: $red_danger;
 
     &:hover {
-        background-color: #4e89cc;
+      background-color: $red_danger_hover;
     }
+  }
+
+  &.outline {
+    background-color: #fff;
+    color: $blue_primary;
+    border: 1px solid $blue_primary;
+    font-weight: 500;
+
+    &:hover {
+      border: 1px solid $blue_primary_hover;
+      background-color: #fff;
+      color: $blue_primary_hover;
+    }
+  }
+
+  &:hover {
+    background-color: $blue_primary_hover;
+  }
 }

@@ -7,3 +7,7 @@ export function getAll() {
 export function postNewDocument(doc) {
   return api.post('/documents', doc)
 }
+
+export function deleteDoc(id) {
+  return api.delete(`/documents/${id}`)
+}

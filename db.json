@@ -1,17 +1,3 @@
 {
-  "documents": [
-    {
-      "documentName": "Certidão",
-      "person": "physical",
-      "personDoc": "102.720.049-44",
-      "fullname": "Lucas Reichert",
-      "cep": "89057-150",
-      "street": "Rua Emílio Voigt",
-      "number": "164",
-      "city": "Blumenau",
-      "state": "SC",
-      "date": 1627862760908,
-      "id": 1
-    }
-  ]
+  "documents": []
 }

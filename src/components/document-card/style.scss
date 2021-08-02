@@ -1,3 +1,5 @@
+@import '../../styles/Variables.scss';
+
 .info-content {
   display: flex;
   width: 100%;
@@ -25,9 +27,39 @@
   }
 }
 
+.modal-header-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.delete-modal-content {
+  .delete-modal-text {
+    padding: .5rem 1.5rem 2rem 1.5rem;
+  }
+  .modal-buttons-footer {
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1.5rem;
+
+    .modal-button-cancel{
+      margin-left: auto;
+    }
+
+    .modal-button-delete {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
 .trash-icon {
-  color: #3570b2;
+  color: $blue_primary;
   cursor: pointer;
+  transition: 200ms;
+
+  &:hover {
+    color: $blue_primary_hover;
+  }
 }
 
 .footer {
