@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #D5D5D5;
+  border-bottom: 1px solid #d5d5d5;
 
   .doc-info {
     width: 50%;
@@ -16,7 +16,7 @@
     padding-top: 0.5rem;
 
     .inline-info {
-        padding-left: 1.5rem;
+      padding-left: 1.5rem;
     }
 
     p {
@@ -25,10 +25,15 @@
   }
 }
 
-.footer {
-    padding-top: 1rem;
+.trash-icon {
+  color: #3570b2;
+  cursor: pointer;
+}
 
-    strong {
-        font-weight: 700;
-    }
+.footer {
+  padding-top: 1rem;
+
+  strong {
+    font-weight: 700;
+  }
 }

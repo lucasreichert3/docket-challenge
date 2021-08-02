@@ -3,6 +3,7 @@ import Card from '../card'
 import { personType } from '../../constans/MaskConstants'
 import './style.scss'
 import { getMonth } from '../../constans/Month'
+import { FaTrash } from 'react-icons/fa'
 
 function DocumentCard({ doc }) {
   const [dateString, setDateString] = useState('')
@@ -16,8 +17,21 @@ function DocumentCard({ doc }) {
     setDateString(dateValue)
   }, [doc])
 
+  const getTrashIcon = () => {
+    return (
+      <div className="trash-icon">
+        <FaTrash />
+      </div>
+    )
+  }
+
   return (
-    <Card key={doc.id} headerTitle={doc.documentName} headerBorder>
+    <Card
+      key={doc.id}
+      headerTitle={doc.documentName}
+      headerBorder
+      headerContent={getTrashIcon()}
+    >
       <div className="info-content">
         <div className="doc-info">
           <h1 className="info-header">
