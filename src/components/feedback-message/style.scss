@@ -1,13 +1,14 @@
+@import '../../styles/Variables.scss';
+
 .feedback-message-content {
   animation: slideFromTop 650ms forwards ease-in-out;
   display: flex;
   align-items: center;
   padding: 1rem;
-  width: 30%;
   border-radius: 5px;
-  background-color: #00b98e;
+  background-color: $green_success;
   color: #fff;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .message-icon {
@@ -32,5 +33,17 @@
   100% {
     top: 5vh;
     opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .feedback-message-content {
+    width: 80%;
+  }
+}
+
+@media (min-width: 801px) {
+  .feedback-message-content {
+    width: 30%;
   }
 }

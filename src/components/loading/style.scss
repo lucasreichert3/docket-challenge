@@ -26,10 +26,12 @@
   }
 
   .loader-hidden-content {
+    width: 100%;
     opacity: .3;
     pointer-events: none;
   }
   .loader-visible-content {
+    width: 100%;
     opacity: 1;
     pointer-events: inherit;
   }

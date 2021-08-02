@@ -1,15 +1,33 @@
 .input-line {
-    display: flex;
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .input-line {
+      flex-direction: column;
+    .first-input {
+      width: 100%;
+    }
+
+    .second-input {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 801px) {
+  .input-line {
     align-items: center;
     width: 100%;
 
     .first-input {
-        width: 60%;
-        padding-right: .5rem;
+      width: 60%;
+      padding-right: 0.5rem;
     }
 
     .second-input {
-        padding-left: .5rem;
-        width: 40%;
+      padding-left: 0.5rem;
+      width: 40%;
     }
+  }
 }

@@ -4,8 +4,6 @@
 }
 
 .main {
-  padding: 1rem 2rem;
-
   .request-header {
     font-weight: 700;
     font-size: 24px;
@@ -15,19 +13,48 @@
   .request-documents {
     display: flex;
 
+
+    .list {
+      .title {
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    padding: 0.5rem 0.5rem;
+  }
+  .request-documents {
+    flex-direction: column;
     .form {
-        padding: 1.5rem .5rem 0 0;
+      padding-top: 1.5rem;
+      width: 100%;
+    }
+
+    .list {
+      padding-top: 1.5rem;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 801px) {
+  .main {
+    padding: 1rem 2rem;
+  }
+  .request-documents {
+    flex-direction: row;
+    .form {
+      padding: 1.5rem 0.5rem 0 0;
       width: 40%;
     }
 
     .list {
-        width: 60%;
-        padding: 1.5rem 0 0 .5rem;
-
-        .title {
-            font-weight: 700;
-            font-size: 18px;
-        }
+      padding: 1.5rem 0 0 0.5rem;
+      width: 60%;
     }
   }
 }

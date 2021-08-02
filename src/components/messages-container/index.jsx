@@ -4,7 +4,7 @@ import FeedbackMessage from '../feedback-message'
 import './style.scss'
 
 function MessagesContainer() {
-  const { messages, } = useFeedbackMessage()
+  const { messages } = useFeedbackMessage()
   return (
     <>
       <div className="feedback-message-container">

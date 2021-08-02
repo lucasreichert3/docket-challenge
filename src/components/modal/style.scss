@@ -14,7 +14,7 @@
   background-color: #fefefe;
   margin: 15% auto;
   box-shadow: 0 0 4px #0000001f;
-  width: 50%;
+
   border-radius: 5px;
 
   .modal-header {
@@ -38,4 +38,16 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 801px) {
+  .modal-content {
+    width: 50%;
+  }
 }
