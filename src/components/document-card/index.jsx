@@ -52,7 +52,6 @@ function DocumentCard({ doc }) {
         <div className="delete-modal-text">
           <span>Tem certeza que deseja excluir este documento?</span>
         </div>
-        <span>{loading && 'loading'}</span>
         <div className="modal-buttons-footer">
           <div className="modal-button modal-button-cancel">
             <Button
