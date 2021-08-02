@@ -1,0 +1,34 @@
+.info-content {
+  display: flex;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #D5D5D5;
+
+  .doc-info {
+    width: 50%;
+
+    .info-header {
+      font-weight: 700;
+    }
+  }
+
+  .data-info {
+    padding-top: 0.5rem;
+
+    .inline-info {
+        padding-left: 1.5rem;
+    }
+
+    p {
+      padding-top: 1rem;
+    }
+  }
+}
+
+.footer {
+    padding-top: 1rem;
+
+    strong {
+        font-weight: 700;
+    }
+}

@@ -33,7 +33,7 @@ function RequestFormCard() {
   }, [personTypeWatch])
 
   const onSubmit = data => {
-    newDocument(data)
+    newDocument({...data, date: Date.now()})
     reset()
   }
 

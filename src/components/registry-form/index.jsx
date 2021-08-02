@@ -37,7 +37,7 @@ function RegistryForm({ register, errors, watch, setValue }) {
         </div>
         <div className="second-input">
           <Input
-            name="Número"
+            name="number"
             type="number"
             label="Número"
             register={register}

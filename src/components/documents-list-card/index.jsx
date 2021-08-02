@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDocuments } from '../../contexts/documents'
-import Card from '../card/index'
 import EmptyState from '../empty-state'
 import icon from '../../assets/document-icon.svg'
 import './styles.scss'
+import DocumentCard from '../document-card'
 
 function DocumentsListCard() {
   const { documents } = useDocuments()
@@ -18,10 +18,8 @@ function DocumentsListCard() {
 
   return (
     <>
-      {documents.map((document, i) => (
-        <Card key={i} headerTitle={document.documentName} headerBorder>
-          <span>teste</span>
-        </Card>
+      {documents.map(doc => (
+        <DocumentCard key={doc.id} doc={doc} />
       ))}
       {documents.length === 0 && (
         <div className="empty-state-container">
