@@ -19,8 +19,8 @@ function DocumentsListCard() {
   return (
     <>
       {documents.map(doc => (
-        <div className="document-card">
-          <DocumentCard key={doc.id} doc={doc} />
+        <div className="document-card" key={doc.id}>
+          <DocumentCard doc={doc} />
         </div>
       ))}
       {documents.length === 0 && (

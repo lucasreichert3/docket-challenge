@@ -90,7 +90,9 @@ function DocumentCard({ doc }) {
             </h1>
             <div className="data-info">
               <p>Nome: {doc.fullname}</p>
-              <p>Cpf: {doc.personDoc}</p>
+              <p>
+                {doc.person === personType.physical ? 'CPF' : 'CNPJ'}: {doc.personDoc}
+              </p>
             </div>
           </div>
           <div className="doc-info">
