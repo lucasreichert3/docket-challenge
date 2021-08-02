@@ -5,16 +5,14 @@ import RequestInfoCard from '../../components/request-info-card/index'
 import RequestFormCard from '../../components/request-form-card/index'
 import DocumentsListCard from '../../components/documents-list-card/index'
 import { useDocuments } from '../../contexts/documents'
-import FeedbackMessage from '../../components/feedback-message'
-import { useFeedbackMessage } from '../../contexts/feedback-message'
+import MessagesContainer from '../../components/messages-container'
 
 function RequestDocuments() {
   const { documents } = useDocuments()
-  const { visible, message, removeMessage } = useFeedbackMessage()
 
   return (
     <>
-      <FeedbackMessage visible={visible} message={message} closeCallback={removeMessage} />
+      <MessagesContainer />
       <header className="header">
         <img src={logo} alt="logo" />
       </header>

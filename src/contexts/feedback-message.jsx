@@ -1,27 +1,21 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useCallback, useContext, useState } from 'react'
 
 const FeedbackMessageContext = createContext({})
 
 export const FeedbackMessageProvider = ({ children }) => {
-  const [message, setMessage] = useState('')
-  const [visible, setVisible] = useState(false)
+  const [messages, setMessages] = useState([])
 
   const showMessage = message => {
-    setVisible(true)
-    setMessage(message)
-
-    setTimeout(() => {
-      removeMessage();
-    }, 3000)
+    const newId = messages.length
+    setMessages([...messages, { message, visible: true, id: newId }])
   }
 
-  const removeMessage = () => {
-    setVisible(false)
-    setMessage('')
-  }
+  const removeToast = useCallback(id => {
+    setMessages(state => state.filter(message => message.id !== id))
+  }, [])
 
   return (
-    <FeedbackMessageContext.Provider value={{ showMessage, message, visible, removeMessage }}>
+    <FeedbackMessageContext.Provider value={{ showMessage, messages, removeToast }}>
       {children}
     </FeedbackMessageContext.Provider>
   )

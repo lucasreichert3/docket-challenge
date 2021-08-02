@@ -1,36 +1,27 @@
-.feedback-message-container {
+.feedback-message-content {
+  animation: slideFromTop 650ms forwards ease-in-out;
   display: flex;
-  justify-content: center;
-  position: fixed;
-  z-index: 2;
-  top: 5vh;
-  width: 100%;
+  align-items: center;
+  padding: 1rem;
+  width: 30%;
+  border-radius: 5px;
+  background-color: #00b98e;
+  color: #fff;
+  margin-top: .5rem;
+}
 
-  .feedback-message-content {
-    animation: slideFromTop 650ms forwards ease-in-out;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem;
-    width: 30%;
-    border-radius: 5px;
-    background-color: #00b98e;
-    color: #fff;
-  }
+.message-icon {
+  font-size: 18px;
+}
 
-  .message-icon {
-    font-size: 18px;
-  }
+.feedback-message {
+  padding-left: 1rem;
+}
 
-  .feedback-message {
-    padding-left: 1rem;
-  }
-
-  .feedback-close-icon {
-    margin-left: auto;
-    font-size: 18px;
-    cursor: pointer;
-  }
+.feedback-close-icon {
+  margin-left: auto;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 @keyframes slideFromTop {

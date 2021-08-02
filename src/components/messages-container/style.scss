@@ -1,0 +1,10 @@
+.feedback-message-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  top: 5vh;
+  width: 100%;
+}
