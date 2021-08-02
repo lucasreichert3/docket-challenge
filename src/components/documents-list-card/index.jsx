@@ -4,9 +4,10 @@ import EmptyState from '../empty-state'
 import icon from '../../assets/document-icon.svg'
 import './styles.scss'
 import DocumentCard from '../document-card'
+import Loading from '../loading/index'
 
 function DocumentsListCard() {
-  const { documents } = useDocuments()
+  const { documents, documentsLoading } = useDocuments()
 
   const imageIcon = () => {
     return (
@@ -23,7 +24,8 @@ function DocumentsListCard() {
           <DocumentCard doc={doc} />
         </div>
       ))}
-      {documents.length === 0 && (
+      <Loading visible={documentsLoading}></Loading>
+      {documents.length === 0 && !documentsLoading && (
         <div className="empty-state-container">
           <EmptyState message="Nenhum documento criado" image={imageIcon()} />
         </div>
